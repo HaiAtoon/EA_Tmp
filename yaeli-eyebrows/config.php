@@ -38,10 +38,10 @@ class Config {
     // DATABASE SETTINGS
     // ------------------------------------------------------------------------
 
-    const DB_HOST       = '';
-    const DB_NAME       = '';
-    const DB_USERNAME   = '';
-    const DB_PASSWORD   = '';
+    const DB_HOST       = 'sql.freedb.tech';
+    const DB_NAME       = 'freedb_yael-ea';
+    const DB_USERNAME   = 'freedb_HaiAt';
+    const DB_PASSWORD   = 'pd4batPEk*7NjJm';
 
     // ------------------------------------------------------------------------
     // GOOGLE CALENDAR SYNC
