@@ -32,7 +32,7 @@ class Config {
 
     const BASE_URL      = 'https://appointments-service.azurewebsites.net/yaeli-eyebrows';
     const LANGUAGE      = 'hebrew';
-    const DEBUG_MODE    = FALSE;
+    const DEBUG_MODE    = TRUE;
 
     // ------------------------------------------------------------------------
     // DATABASE SETTINGS
