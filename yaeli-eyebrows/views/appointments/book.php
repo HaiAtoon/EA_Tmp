@@ -30,7 +30,7 @@
             <!-- FRAME TOP BAR -->
 
             <div id="header">
-		<span class="d-flex justify-content-center"><img src="http://yaeli-eyebrows.germanywestcentral.cloudapp.azure.com/y.jpg"></span>
+		<span class="d-flex justify-content-center"><img src="https://appointments-service.azurewebsites.net/yaeli-eyebrows/y.jpg"></span>
                 <span id="company-name"><?= $company_name ?></span>
 
                 <div id="steps">
