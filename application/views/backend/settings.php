@@ -149,7 +149,7 @@
                             <div class="form-group">
                                 <label for="google-analytics-code">
                                     Google Analytics ID</label>
-                                <input id="google-analytics-code" placeholder="UA-XXXXXXXX-XX or G-XXXXXXXXXX"
+                                <input id="google-analytics-code" placeholder="UA-XXXXXXXX-XX"
                                        data-field="google_analytics_code" class="form-control">
                                 <span class="help-block">
                                     <?= lang('google_analytics_code_hint') ?>

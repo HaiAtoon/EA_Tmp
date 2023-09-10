@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
+<meta name="google-site-verification" content="yz1luicG5teuknvtrNfjKbCVf1O9z-nAuYCUQFt-Ibs" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#35A768">
+    <meta name="theme-color" content="#a0a0a0">
 
     <title><?= lang('page_title') . ' ' . $company_name ?></title>
 
@@ -29,6 +30,7 @@
             <!-- FRAME TOP BAR -->
 
             <div id="header">
+		<span class="d-flex justify-content-center"><img src="https://appointments-service.azurewebsites.net/yaeli-eyebrows/y.jpg"></span>
                 <span id="company-name"><?= $company_name ?></span>
 
                 <div id="steps">
@@ -194,7 +196,7 @@
                     <button type="button" id="button-next-1" class="btn button-next btn-dark"
                             data-step_index="1">
                         <?= lang('next') ?>
-                        <i class="fas fa-chevron-right ml-2"></i>
+                        <i class="fas fa-chevron-left ml-2"></i>
                     </button>
                 </div>
             </div>
@@ -210,6 +212,16 @@
                         <div class="col-12 col-md-6">
                             <div id="select-date"></div>
                         </div>
+
+			<!-- Craig Tucker mod start-->
+                            <div class="col-md-6">
+				<div align="center" id="select-date" >
+				<figure id="wait" class="item">
+					<img id='spinner' src="<?php echo $this->config->item('base_url'); ?>/assets/img/loading-dots.gif" />
+				</figure>
+				</div>
+                            </div>
+			<!-- Craig Tucker mod end-->
 
                         <div class="col-12 col-md-6">
                             <div id="select-time">
@@ -227,13 +239,13 @@
                 <div class="command-buttons">
                     <button type="button" id="button-back-2" class="btn button-back btn-outline-secondary"
                             data-step_index="2">
-                        <i class="fas fa-chevron-left mr-2"></i>
+                        <i class="fas fa-chevron-right  mr-2"></i>
                         <?= lang('back') ?>
                     </button>
                     <button type="button" id="button-next-2" class="btn button-next btn-dark"
                             data-step_index="2">
                         <?= lang('next') ?>
-                        <i class="fas fa-chevron-right ml-2"></i>
+                        <i class="fas fa-chevron-left ml-2"></i>
                     </button>
                 </div>
             </div>
@@ -278,7 +290,7 @@
                             </div>
                         </div>
 
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-6" hidden>
                             <div class="form-group">
                                 <label for="address" class="control-label">
                                     <?= lang('address') ?>
@@ -338,13 +350,13 @@
                 <div class="command-buttons">
                     <button type="button" id="button-back-3" class="btn button-back btn-outline-secondary"
                             data-step_index="3">
-                        <i class="fas fa-chevron-left mr-2"></i>
+                        <i class="fas fa-chevron-right mr-2"></i>
                         <?= lang('back') ?>
                     </button>
                     <button type="button" id="button-next-3" class="btn button-next btn-dark"
                             data-step_index="3">
                         <?= lang('next') ?>
-                        <i class="fas fa-chevron-right ml-2"></i>
+                        <i class="fas fa-chevron-left ml-2"></i>
                     </button>
                 </div>
             </div>
@@ -378,7 +390,7 @@
                 <div class="command-buttons">
                     <button type="button" id="button-back-4" class="btn button-back btn-outline-secondary"
                             data-step_index="4">
-                        <i class="fas fa-chevron-left mr-2"></i>
+                        <i class="fas fa-chevron-right mr-2"></i>
                         <?= lang('back') ?>
                     </button>
                     <form id="book-appointment-form" style="display:inline-block" method="post">
@@ -471,6 +483,24 @@
         FrontendBook.initialize(true, GlobalVariables.manageMode);
         GeneralFunctions.enableLanguageSelection($('#select-language'));
     });
+
+		<!-- Craig Tucker mod start 2-->
+		$(document).ready(function(){
+			$(document).ajaxStart(function(){
+				$(".ui-datepicker").css("opacity", ".2");
+				$("#wait").css("display", "block");
+			});
+			$(document).ajaxComplete(function(){
+				$(".ui-datepicker").css("opacity", "1");
+				$("#wait").css("display", "none");
+			});
+			$("button").click(function(){
+				$("#txt").load("demo_ajax_load.asp");
+			});
+		});
+		
+
+		<!-- Craig Tucker mod end 2-->
 </script>
 
 <?php google_analytics_script(); ?>
