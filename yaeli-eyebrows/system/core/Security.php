@@ -283,7 +283,7 @@ class CI_Security {
 					'path'     => config_item('cookie_path'),
 					'domain'   => config_item('cookie_domain'),
 					'secure'   => $secure_cookie,
-					'httponly' => config_item('cookie_httponly'),
+					'httponly' => config_item('cookie_httponly') ?? true,
 					'samesite' => 'Strict'
 				)
 			);
